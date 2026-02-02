@@ -1,0 +1,61 @@
+# =============================================================================
+# GitHub Actions CI/CD Pipeline
+#
+# This workflow demonstrates how to use GitHub Marketplace actions.
+# Each 'uses:' line references an action from the Marketplace.
+# =============================================================================
+
+# give it a name to start
+
+
+# Trigger the workflow on push to main branch
+
+
+  # ---------------------------------------------------------------------------
+  # Job 1: Lint the code
+  # ---------------------------------------------------------------------------
+
+
+      # MARKETPLACE ACTION: Checkout repository
+      # https://github.com/marketplace/actions/checkout
+
+      # MARKETPLACE ACTION: Setup Python environment
+      # https://github.com/marketplace/actions/setup-python
+
+      # Run linters (black will fail with python 3.14)
+
+  # ---------------------------------------------------------------------------
+  # Job 2: Run tests
+  # ---------------------------------------------------------------------------
+
+    # Matrix strategy: test on multiple Python versions
+
+      # MARKETPLACE ACTION: Checkout
+
+      # MARKETPLACE ACTION: Setup Python with caching
+
+      # MARKETPLACE ACTION: Upload coverage to Codecov
+      # https://github.com/marketplace/actions/codecov
+  
+  # ---------------------------------------------------------------------------
+  # Job 3: Security scan
+  # ---------------------------------------------------------------------------
+  
+      # MARKETPLACE ACTION: Run Bandit security scanner
+      # https://github.com/marketplace/actions/bandit-action
+
+  # ---------------------------------------------------------------------------
+  # Job 4: Build and create release artifact
+  # ---------------------------------------------------------------------------
+
+      # MARKETPLACE ACTION: Upload build artifacts
+      # https://github.com/marketplace/actions/upload-a-build-artifact
+
+  # ---------------------------------------------------------------------------
+  # Job 5: Create GitHub Release (only on tags)
+  # ---------------------------------------------------------------------------
+
+      # MARKETPLACE ACTION: Download artifacts from previous job
+
+      # MARKETPLACE ACTION: Create GitHub Release
+      # https://github.com/marketplace/actions/gh-release
