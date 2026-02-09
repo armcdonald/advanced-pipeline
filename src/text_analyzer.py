@@ -29,7 +29,6 @@ def sentence_count(text: str) -> int:
     if not text or not text.strip():
         return 0
     # Match sentence-ending punctuation
-    # This should be caught by the linter as double quotes are needed for regex by PEP standard
     sentences = re.split(r"[.!?]+", text)
     # Filter out empty strings
     return len([s for s in sentences if s.strip()])
