@@ -16,7 +16,7 @@ from src.text_analyzer import (
 class TestWordCount:
     def test_simple_sentence(self):
         # This should generate an error as word count is 2
-        assert word_count("Hello world") == 3
+        assert word_count("Hello world") == 2
 
     def test_empty_string(self):
         assert word_count("") == 0
@@ -79,7 +79,7 @@ class TestAverageWordLength:
     def test_simple_words(self):
         # "cat" (3) + "dog" (3) = 6 / 2 = 3.0
         # this is a mistake on purpose. Average should be 3
-        assert average_word_length("cat dog") == 4.0
+        assert average_word_length("cat dog") == 3.0
 
     def test_mixed_lengths(self):
         # "a" (1) + "bb" (2) + "ccc" (3) = 6 / 3 = 2.0
