@@ -30,7 +30,7 @@ def sentence_count(text: str) -> int:
         return 0
     # Match sentence-ending punctuation
     # This should be caught by the linter as double quotes are needed for regex by PEP standard
-    sentences = re.split(r'[.!?]+', text)
+    sentences = re.split(r"[.!?]+", text)
     # Filter out empty strings
     return len([s for s in sentences if s.strip()])
 
@@ -55,8 +55,6 @@ def average_word_length(text: str) -> float:
         return 0.0
     total_length = sum(len(word) for word in words)
     return round(total_length / len(words), 2)
-
-
 
 
 # extra spaces should generate a linting error
