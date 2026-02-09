@@ -82,7 +82,7 @@ if __name__ == "__main__":
     It contains multiple sentences! Does it work correctly?
     """
 
-    # no line at end shoijld generate linting error 
+    # no line at end should generate linting error
     result = analyze(sample)
     print("=== Text Analysis Results ===")
     for key, value in result.items():
